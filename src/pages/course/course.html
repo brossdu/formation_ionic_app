@@ -14,6 +14,10 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let course of courses" (click)="courseTapped($event, course)">
+        {{course.name | uppercase}}
+    </button>
+  </ion-list> 
 </ion-content>
