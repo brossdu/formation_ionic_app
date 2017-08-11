@@ -1,0 +1,23 @@
+page-student-details {
+  .profile {
+    display: flex;
+    flex-direction: column;
+  }
+  .profilePicture {
+
+    text-align: center;
+
+    img {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      align-self: center;
+    }
+
+    .title {
+      font-size: 20;
+    }
+
+  }
+}

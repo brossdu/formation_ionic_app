@@ -29,4 +29,9 @@ export class ApiProvider {
       .map(res => <Student[]>res.json());
   }
 
+  getStudentById(id): Observable<Student> {
+    return this.get(`students/${id}`)
+      .map(res => <Student>res.json());
+  }
+
 }
