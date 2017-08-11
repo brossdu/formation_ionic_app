@@ -20,9 +20,12 @@ export class ApiProvider {
     console.log('Hello ApiProvider Provider');
   }
 
+  private get(endpoint) {
+    return this.http.get(`${this.url}/${endpoint}`)
+  }
+
   getStudents(): Observable<Student[]> {
-    console.log(this.http)
-    return this.http.get(`${this.url}/students`)
+    return this.get('students')
       .map(res => <Student[]>res.json());
   }
 
