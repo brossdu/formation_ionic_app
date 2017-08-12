@@ -23,6 +23,12 @@ export class StudentPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiProvider) {
 
     api.getStudents().subscribe(students => {
+      students.sort(function(a, b) {
+        if(a.name.first < b.name.first)
+          return -1
+        return 1;
+      })
+
       this.students = students;
     })
 
