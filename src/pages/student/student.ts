@@ -19,10 +19,11 @@ import {  ApiProvider } from '../../providers/api/api';
 export class StudentPage {
 
   students: Student[];
+  error:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiProvider) {
 
-    api.getStudents().subscribe(students => {
+    this.api.getStudents().subscribe(students => {
       students.sort(function(a, b) {
         if(a.name.first < b.name.first)
           return -1
@@ -30,7 +31,7 @@ export class StudentPage {
       })
 
       this.students = students;
-    })
+    }, err => this.error = err,)
 
   }
 

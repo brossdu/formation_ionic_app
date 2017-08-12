@@ -27,7 +27,7 @@ export class StudentDetailsPage {
       this.lastname = navParams.get('lastname')
       this.firstname = navParams.get('firstname')
 
-      api.getStudentById(this.id).subscribe(student => {
+      this.api.getStudentById(this.id).subscribe(student => {
         this.student = student;
         this.firstname = student.name.first;
         this.lastname = student.name.last;

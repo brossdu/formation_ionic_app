@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Course } from '../../models/Course';
 import {  ApiProvider } from '../../providers/api/api';
 
@@ -17,7 +17,7 @@ import {  ApiProvider } from '../../providers/api/api';
 export class CoursePage {
   courses :Course[];
   constructor(public navCtrl: NavController, public navParams: NavParams, public api:ApiProvider) {
-    api.getCourses().subscribe(courses => {
+    this.api.getCourses().subscribe(courses => {
       this.courses = courses;
     })
   }
