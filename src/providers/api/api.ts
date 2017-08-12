@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
 import { Student } from '../../models/student';
+import { Course } from "../../models/Course";
 
 /*
   Generated class for the ApiProvider provider.
@@ -34,4 +35,13 @@ export class ApiProvider {
       .map(res => <Student>res.json());
   }
 
+  getCourses(): Observable<Course[]> {
+    return this.get('courses')
+      .map(res => <Course[]>res.json());
+  }
+
+  getCourseById(id): Observable<Course[]> {
+    return this.get(`courses/${id}`)
+      .map(res => <Course[]>res.json());
+  }
 }
