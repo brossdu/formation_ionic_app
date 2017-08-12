@@ -14,15 +14,36 @@
 
 
 <ion-content padding class="profile">
-   <ion-list *ngIf ="student">
-
-     <div class="profilePicture">
-       <img [src]="student?.picture?.large"/>
-       <div class="title">
-         {{student.name.first}} {{student.name.last}}
-       </div>
-     </div>
-
-
+  <ion-grid>
+        <ion-row center>
+              <ion-col *ngIf ="student">
+                <ion-avatar class="profilePicture">
+                    <img [src]="student?.picture?.large"/>
+                  </ion-avatar>
+                <h3 class="title">
+                      {{student.name.first |capitalize}} {{student.name.last}}
+                </h3>
+              </ion-col>
+        </ion-row>
+  </ion-grid>
+  <ion-list *ngIf ="student">
+      <ion-item-divider color="light">Général</ion-item-divider> 
+      <ion-item>
+        <ion-icon name="mail" item-start></ion-icon>
+        <a href="mailto:{{student.email}}">{{student.email}}</a>
+      </ion-item>
+      <ion-item><ion-icon name="phone-portrait" item-start></ion-icon>
+        <a href="tel:0041788979395">078 897 93 95</a>
+      </ion-item>
+        <ion-item-divider color="light">Adresse</ion-item-divider>
+      <ion-item>
+        {{student.location.street}}
+      </ion-item>
+      <ion-item>
+        {{student.location.postcode}}  {{student.location.city | capitalize}}
+      </ion-item>
+        <ion-item>
+        {{student.location.state | capitalize}}
+      </ion-item>
   </ion-list>
 </ion-content>

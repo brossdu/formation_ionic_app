@@ -10,7 +10,7 @@ import { CoursePage } from "../pages/course/course";
 import { MapPage } from "../pages/map/map";
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;

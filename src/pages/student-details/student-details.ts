@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Student } from '../../models/student';
 import { ApiProvider } from '../../providers/api/api';
 
+
 /**
  * Generated class for the StudentDetailsPage page.
  *
