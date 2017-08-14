@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Course } from "../../models/Course";
+import { ApiProvider } from "../../providers/api/api";
 
 /**
  * Generated class for the CourseDetailPage page.
@@ -16,10 +17,18 @@ import { Course } from "../../models/Course";
 })
 export class CourseDetailPage {
 
-  course: Course
+  course?: Course
+  courseId: String
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.course = navParams.get('course')
+  constructor(public navCtrl: NavController, public navParams: NavParams, private api:ApiProvider) {
+    //this.course = this.navParams.get('course')
+    this.courseId = navParams.get('courseID')
+    this.api.getCourseById(this.courseId).subscribe(course => {
+      this.course = course;
+    })
+  }
+  sessionTapped($event, session) {
+    console.log("session tapped")
   }
 
   ionViewDidLoad() {

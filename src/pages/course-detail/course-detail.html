@@ -18,7 +18,7 @@
   <h3>Sessions</h3>
   <ion-list *ngIf ="course">
       <button ion-item *ngFor="let session of course.sessions" (click)="sessionTapped($event, session)">
-        {{session.startDate | date:"d.MM.y" }} de {{session.startDate | date:"hh:mm" }} à {{session.endDate | date:"h:mm" }}
+        {{session.startDate | date:"d.MM.y" }} de {{session.startDate | date:"hh:mm" }} à {{session.endDate | date:"hh:mm" }}
     </button>   
   </ion-list>
   <h3>Lieu</h3>
