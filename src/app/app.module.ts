@@ -13,6 +13,8 @@ import { MapPage } from "../pages/map/map";
 import { StudentPage } from "../pages/student/student";
 
 import { ApiProvider } from '../providers/api/api';
+import { AddressListComponent } from "../components/address-list/address-list";
+import { ComponentsModule } from "../components/components.module";
 
 @NgModule({
   declarations: [
@@ -20,12 +22,12 @@ import { ApiProvider } from '../providers/api/api';
     HomePage,
     CoursePage,
     StudentPage,
-    MapPage
+    MapPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

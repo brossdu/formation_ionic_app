@@ -36,14 +36,6 @@
         <a href="tel:0041788979395">078 897 93 95</a>
       </ion-item>
         <ion-item-divider color="light">Adresse</ion-item-divider>
-      <ion-item>
-        {{student.location.street}}
-      </ion-item>
-      <ion-item>
-        {{student.location.postcode}}  {{student.location.city | capitalize}}
-      </ion-item>
-        <ion-item>
-        {{student.location.state | capitalize}}
-      </ion-item>
+        <address-list [location]="student.location"></address-list>        
   </ion-list>
-</ion-content>
+ </ion-content>

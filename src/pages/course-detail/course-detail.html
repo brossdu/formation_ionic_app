@@ -23,14 +23,6 @@
   </ion-list>
   <h3>Lieu</h3>
     <ion-list *ngIf ="course">
-      <ion-item>
-        {{course?.location.street}}
-      </ion-item>
-      <ion-item>
-        {{course?.location.postcode}}  {{course.location.city | capitalize}}
-      </ion-item>
-        <ion-item>
-        {{course?.location.state | capitalize}}
-      </ion-item>
+        <address-list [location]="course.location"></address-list>        
   </ion-list>
 </ion-content>

@@ -14,13 +14,6 @@ interface Name {
   last: string;
 }
 
-interface Location {
-  street: string;
-  city: string;
-  state: string;
-  postCode: number;
-}
-
 interface Picture {
   large: string;
   medium: string;
