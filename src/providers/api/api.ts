@@ -15,7 +15,7 @@ import { Course } from "../../models/Course";
 @Injectable()
 export class ApiProvider {
 
-  url = 'https://33dc1ec4.ngrok.io'
+  url = 'https://1f33e6f5.ngrok.io'
 
   constructor(public http: Http) {
     console.log('Hello ApiProvider Provider');
@@ -40,8 +40,8 @@ export class ApiProvider {
       .map(res => <Course[]>res.json());
   }
 
-  getCourseById(id): Observable<Course[]> {
+  getCourseById(id): Observable<Course> {
     return this.get(`courses/${id}`)
-      .map(res => <Course[]>res.json());
+      .map(res => <Course>res.json());
   }
 }

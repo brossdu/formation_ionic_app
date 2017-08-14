@@ -15,6 +15,12 @@
 
 
 <ion-content>
+    <ion-searchbar
+    [(ngModel)]="search"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)"
+    (ionCancel)="onCancel($event)">
+  </ion-searchbar>
    <ion-list>
     <button ion-item *ngFor="let student of students" (click)="studentTapped($event, student)">
         <ion-avatar item-left>

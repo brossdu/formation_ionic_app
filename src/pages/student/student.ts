@@ -19,6 +19,8 @@ import {  ApiProvider } from '../../providers/api/api';
 export class StudentPage {
 
   students: Student[];
+  referenceStudents: Student[];
+  search: string = "";
   error:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiProvider) {
@@ -31,12 +33,26 @@ export class StudentPage {
       })
 
       this.students = students;
+      this.referenceStudents = students;
     }, err => this.error = err,)
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad StudentPage');
+  }
+
+  shouldShowCancel(){
+    return this.search != "";
+  }
+
+  onInput(event){
+    this.students = this.referenceStudents
+    this.students = this.students.filter(student => (student.name.first.indexOf(this.search) != -1 ||  student.name.last.indexOf(this.search) != -1))
+  }
+
+  onCancel(event){
+    this.students = this.referenceStudents
   }
 
   studentTapped(event,student){

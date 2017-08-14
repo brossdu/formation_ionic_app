@@ -23,8 +23,10 @@ export class CoursePage {
   }
 
   courseTapped(event,course){
+    console.log("Push course")
+    console.log(course.name)
     this.navCtrl.push('CourseDetailPage', {
-        course:course
+        "courseID":course.id
     })
   }
 
