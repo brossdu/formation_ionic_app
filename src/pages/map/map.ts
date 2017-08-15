@@ -27,21 +27,24 @@ export class MapPage {
       if(courses.length > 0 ) {
         let mapEle = this.mapElement.nativeElement;
         let bounds = new google.maps.LatLngBounds();
-
+        let markers = [];
         let map = new google.maps.Map(mapEle, {
           // center: {lat: courses[0].location.lat, lng:courses[0].location.lng},
           // zoom: 16
         });
         courses.forEach(course=>{
           console.log(bounds)
-          let point =new google.maps.LatLng({lat: course.location.lat, lng:course.location.lng})
-          //bounds.extend({point: point})
-          let marker = new google.maps.Marker({
+          //let point =new google.maps.LatLng({lat: course.location.lat, lng:course.location.lng})
+           markers.push(new google.maps.Marker({
             position: {lat: course.location.lat, lng:course.location.lng},
             map: map,
             title: course.name
-          });
+          }));
         })
+        markers.forEach(marker => {
+          bounds.extend(marker.getPosition())
+        });
+
         map.fitBounds(bounds);        
       }
     })
