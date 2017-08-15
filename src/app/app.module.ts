@@ -15,6 +15,7 @@ import { StudentPage } from "../pages/student/student";
 import { ApiProvider } from '../providers/api/api';
 import { AddressListComponent } from "../components/address-list/address-list";
 import { ComponentsModule } from "../components/components.module";
+import { PipesModule } from "../pipes/pipes.module";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ComponentsModule } from "../components/components.module";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    PipesModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

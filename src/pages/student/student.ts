@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, IonicPage } from 'ionic-angular';
 
 import { Student } from '../../models/student';
 import {  ApiProvider } from '../../providers/api/api';
@@ -10,7 +10,7 @@ import {  ApiProvider } from '../../providers/api/api';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-
+@IonicPage()
 @Component({
   selector: 'page-student',
   templateUrl: 'student.html',
