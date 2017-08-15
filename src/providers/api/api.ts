@@ -15,7 +15,7 @@ import { Course } from "../../models/Course";
 @Injectable()
 export class ApiProvider {
 
-  url = 'https://1f33e6f5.ngrok.io'
+  url = 'http://localhost:5642'
 
   constructor(public http: Http) {
     console.log('Hello ApiProvider Provider');

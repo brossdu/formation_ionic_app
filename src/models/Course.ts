@@ -1,6 +1,8 @@
+import { Address } from './Location'
+
 export interface Course {
   name: string;
-  location: Location;
+  location: Address;
   sessions:Array<Period>;
 }
 
