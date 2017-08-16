@@ -15,7 +15,7 @@ import { Course } from "../../models/Course";
 @Injectable()
 export class ApiProvider {
 
-  url = 'http://localhost:5642'
+  url = 'http://formation.apptitude.ch'
 
   constructor(public http: Http) {
     console.log('Hello ApiProvider Provider');

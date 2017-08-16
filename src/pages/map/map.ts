@@ -28,10 +28,7 @@ export class MapPage {
         let mapEle = this.mapElement.nativeElement;
         let bounds = new google.maps.LatLngBounds();
         let markers = [];
-        let map = new google.maps.Map(mapEle, {
-          // center: {lat: courses[0].location.lat, lng:courses[0].location.lng},
-          // zoom: 16
-        });
+        let map = new google.maps.Map(mapEle);
         courses.forEach(course=>{
           console.log(bounds)
           //let point =new google.maps.LatLng({lat: course.location.lat, lng:course.location.lng})
@@ -41,8 +38,8 @@ export class MapPage {
             title: course.name
           }));
         })
-        markers.forEach(marker => {
-          bounds.extend(marker.getPosition())
+        markers.forEach(marker => { 
+          bounds.extend(marker.getPosition()) 
         });
 
         map.fitBounds(bounds);        

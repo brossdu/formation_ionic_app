@@ -1,10 +1,12 @@
+import { Address } from './Location'
+
 export interface Student {
   id: number;
   gender: string;
   name: Name;
   email: string;
   picture: Picture;
-  location: Location;
+  location: Address;
   nat: string;
 }
 

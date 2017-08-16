@@ -8,6 +8,6 @@ export interface Course {
 
 interface Period {
   title: string;
-  first: string;
-  last: string;
+  startDate: string;
+  endDate: string;
 }

@@ -16,6 +16,7 @@ import { ApiProvider } from '../providers/api/api';
 import { AddressListComponent } from "../components/address-list/address-list";
 import { ComponentsModule } from "../components/components.module";
 import { PipesModule } from "../pipes/pipes.module";
+import { Calendar } from '@ionic-native/calendar';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { PipesModule } from "../pipes/pipes.module";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider,
+    Calendar
   ]
 })
 export class AppModule {}

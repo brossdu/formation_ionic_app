@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { PipesModule } from "../../pipes/pipes.module";
 import { StudentPage } from "./student";
 
 @NgModule({
@@ -8,7 +7,6 @@ import { StudentPage } from "./student";
     StudentPage,
   ],
   imports: [
-    PipesModule,
     IonicPageModule.forChild(StudentPage),
 
   ],
